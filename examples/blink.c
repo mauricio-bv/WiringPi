@@ -27,14 +27,17 @@
 #include <wiringPi.h>
 
 // LED Pin - wiringPi pin 0 is BCM_GPIO 17.
+//https://pinout.xyz/
+// gcc blink.c ../wiringPi/wiringPi.c ../wiringPi/softPwm.c ../wiringPi/softTone.c ../wiringPi/piHiPri.c -o ab -lwiringPiDev -lpthread
+// make blink
 
-#define	LED	0
+#define	LED	5
 
 int main (void)
 {
   printf ("Raspberry Pi blink\n") ;
-
   wiringPiSetup () ;
+
   pinMode (LED, OUTPUT) ;
 
   for (;;)
